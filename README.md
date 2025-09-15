@@ -307,7 +307,7 @@ iconest-react works seamlessly with Tailwind CSS! All icons accept the `classNam
 ### Building from Source
 
 ```bash
-git clone https://github.com/your-org/iconest-react
+git clone https://github.com/iconest/iconest-react
 cd iconest-react
 npm install
 npm run build
