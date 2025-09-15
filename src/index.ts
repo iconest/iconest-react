@@ -1,5 +1,5 @@
 export { createIconComponent, IconestIcon } from './IconestIcon';
-export type { IconProps, Icon } from './IconestIcon';
+export type { IconProps, Icon, CommonIconProps } from './IconestIcon';
 
 export { Activity } from './Activity';
 export { ActivityHeart } from './ActivityHeart';

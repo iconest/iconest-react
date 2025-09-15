@@ -1,14 +1,48 @@
 import React, { forwardRef } from 'react';
 
-export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+/**
+ * Common icon properties that developers typically use
+ */
+export interface CommonIconProps {
+  /**
+   * The size of the icon. Can be a number (pixels) or string (e.g., "24px", "1.5rem")
+   * @default 24
+   */
   size?: number | string;
+  
+  /**
+   * The color of the icon. Can be any valid CSS color value
+   * @default "currentColor"
+   */
   color?: string;
+  
+  /**
+   * Additional CSS classes to apply to the icon
+   */
+  className?: string;
+}
+
+/**
+ * Extended icon properties including SVG-specific attributes
+ */
+export interface IconProps extends CommonIconProps, Omit<React.SVGProps<SVGSVGElement>, 'ref' | 'color' | 'width' | 'height' | 'className'> {
+  /**
+   * The stroke width of the icon
+   * @default 2
+   */
   strokeWidth?: number | string;
+  
+  /**
+   * Whether to use absolute stroke width (scales with icon size)
+   * @default false
+   */
   absoluteStrokeWidth?: boolean;
 }
 
-export interface Icon {
-  (...args: any[]): React.ReactElement;
+export interface Icon extends React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>> {
+  /**
+   * The display name of the icon component
+   */
   displayName?: string;
 }
 
