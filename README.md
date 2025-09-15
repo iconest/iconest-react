@@ -175,10 +175,6 @@ npm install
 npm run build
 ```
 
-### Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
