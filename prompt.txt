@@ -1,0 +1,236 @@
+# Iconest React Documentation Website - AI Agent Instructions
+
+## Project Overview
+Create a beautiful, modern documentation website for iconest-react, an icon library with 1,100+ React components. The website should be similar to Lucide's documentation (https://lucide.dev) in terms of design quality, functionality, and user experience.
+
+## Core Requirements
+
+### 1. Technology Stack
+- **Framework**: Next.js 14+ with App Router
+- **Styling**: Tailwind CSS for consistent design
+- **Components**: Headless UI or Radix UI for accessibility
+- **Search**: Algolia DocSearch or custom search with Fuse.js
+- **Deployment**: Vercel (preferred) or Netlify
+- **Content**: MDX for documentation pages
+
+### 2. Website Structure
+
+#### Homepage
+- Hero section with animated icon examples
+- Key features showcase (1,100+ icons, TypeScript, Tree-shakable, etc.)
+- Quick start code example
+- Live icon search preview
+- GitHub stars badge and npm download stats
+
+#### Icon Browser (Main Feature)
+- **Grid Layout**: Responsive icon grid (4-6 icons per row on desktop)
+- **Categories**: Organize icons by category (UI, Navigation, Media, Business, etc.)
+- **Search**: Real-time search with fuzzy matching
+- **Filters**: Filter by category, size, or style
+- **Icon Cards**: Each icon displays:
+  - Icon preview (24px size)
+  - Icon name
+  - Category tag
+  - Copy buttons for:
+    - React component name (`<IconName />`)
+    - SVG code
+    - Import statement (`import { IconName } from 'iconest-react'`)
+- **Icon Detail View**: Click icon to see:
+  - Large preview (multiple sizes: 16px, 24px, 32px, 48px)
+  - Usage examples
+  - Props showcase
+  - Related icons
+
+#### Documentation Pages
+- **Getting Started**: Installation, basic usage
+- **API Reference**: Props, TypeScript types
+- **Examples**: Common patterns, Tailwind integration
+- **Contributing**: How to contribute new icons
+- **Changelog**: Version history
+
+#### Additional Features
+- **Dark/Light Mode**: Theme toggle with system preference detection
+- **Copy to Clipboard**: One-click copy functionality
+- **Icon Preview**: Hover effects and interactive states
+- **Keyboard Navigation**: Arrow keys for icon browsing
+- **URL Deep Linking**: Share specific icons via URL
+
+### 3. Design Requirements
+
+#### Visual Design
+- Clean, modern aesthetic similar to Lucide
+- Consistent spacing using Tailwind's design system
+- Subtle shadows and rounded corners
+- Professional color palette (grays, blues, accent colors)
+- Responsive design (mobile-first approach)
+
+#### Typography
+- Clear hierarchy with proper font weights
+- Code snippets with syntax highlighting (Prism.js or Shiki)
+- Readable font sizes and line heights
+
+#### Animation & Interactions
+- Smooth transitions (0.2s ease-in-out)
+- Hover effects on interactive elements
+- Loading states for search and icon loading
+- Micro-interactions for better UX
+
+### 4. Functionality Specifications
+
+#### Icon Data Structure
+```typescript
+interface IconData {
+  name: string;           // "Heart"
+  componentName: string;  // "Heart"
+  category: string;       // "UI", "Navigation", "Media", etc.
+  tags: string[];        // ["love", "favorite", "like"]
+  svgContent: string;    // Raw SVG path data
+  popularity?: number;   // Usage ranking
+}
+```
+
+#### Search Implementation
+- Fuzzy search across icon names and tags
+- Category-based filtering
+- Sort options: Alphabetical, Popularity, Recent
+- Search result highlighting
+- Empty state handling
+
+#### Copy Functionality
+- Copy React component: `<Heart size={24} />`
+- Copy import statement: `import { Heart } from 'iconest-react';`
+- Copy SVG code: Raw SVG markup
+- Success feedback with toast notifications
+
+### 5. Content Requirements
+
+#### Icon Categories (Organize 1,100+ icons)
+- **UI & Interface** (buttons, controls, navigation)
+- **Communication** (mail, phone, messaging)
+- **Media & Entertainment** (play, music, video)
+- **Business & Finance** (calendar, money, charts)
+- **Technology** (code, devices, networks)
+- **Transportation** (cars, planes, maps)
+- **Weather & Nature** (sun, rain, trees)
+- **Health & Medical** (heart, medical cross)
+- **Security & Privacy** (lock, shield, key)
+- **Social** (share, like, follow)
+- **Education** (book, graduation, learning)
+- **Shopping** (cart, bag, payment)
+
+#### Documentation Content
+- Installation guide with multiple package managers
+- Basic usage examples
+- Advanced patterns (custom styling, animation)
+- TypeScript integration
+- Tailwind CSS examples
+- Accessibility guidelines
+- Performance optimization tips
+
+### 6. Technical Implementation
+
+#### Data Generation
+Create a script to:
+1. Parse iconest-react source files
+2. Extract icon metadata (name, category, SVG content)
+3. Generate searchable JSON data
+4. Create category mappings
+5. Generate static pages for each icon
+
+#### SEO Optimization
+- Meta tags for each icon page
+- Open Graph images for social sharing
+- Structured data markup
+- Sitemap generation
+- Fast loading times (< 3s)
+
+#### Performance
+- Image optimization
+- Code splitting
+- Lazy loading for icon grid
+- CDN for static assets
+- Bundle size optimization
+
+### 7. Additional Features
+
+#### Developer Experience
+- **Figma Plugin**: Browse and copy icons directly in Figma
+- **VS Code Extension**: Icon picker and autocomplete
+- **CLI Tool**: Command-line icon search and copy
+- **API Endpoint**: JSON API for third-party integrations
+
+#### Community Features
+- **Icon Requests**: Form for requesting new icons
+- **Usage Examples**: Community-contributed examples
+- **Showcase**: Projects using iconest-react
+- **Statistics**: Download counts, popular icons
+
+### 8. File Structure
+```
+iconest-docs/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx                 # Homepage
+│   │   ├── icons/
+│   │   │   ├── page.tsx            # Icon browser
+│   │   │   └── [icon]/page.tsx     # Individual icon pages
+│   │   ├── docs/
+│   │   │   ├── getting-started/
+│   │   │   ├── api-reference/
+│   │   │   └── examples/
+│   │   └── layout.tsx
+│   ├── components/
+│   │   ├── IconGrid.tsx
+│   │   ├── IconCard.tsx
+│   │   ├── SearchBar.tsx
+│   │   ├── CategoryFilter.tsx
+│   │   └── CopyButton.tsx
+│   ├── data/
+│   │   ├── icons.json              # Generated icon data
+│   │   └── categories.json
+│   └── lib/
+│       ├── search.ts
+│       └── utils.ts
+├── scripts/
+│   └── generate-icon-data.js       # Data generation script
+└── public/
+    ├── icons/                      # Static icon files
+    └── og-images/                  # Social sharing images
+```
+
+### 9. Success Metrics
+- Fast search (< 100ms response time)
+- High accessibility score (WCAG AA compliance)
+- Mobile-responsive (works on all screen sizes)
+- Fast page loads (Lighthouse score > 90)
+- SEO optimized (proper meta tags, sitemap)
+
+### 10. Reference Examples
+Study these websites for inspiration:
+- **Lucide**: https://lucide.dev (primary reference)
+- **Heroicons**: https://heroicons.com
+- **Tabler Icons**: https://tabler-icons.io
+- **React Icons**: https://react-icons.github.io/react-icons
+- **Phosphor Icons**: https://phosphoricons.com
+
+## Deliverables
+1. Complete Next.js website with all specified features
+2. Icon data generation script
+3. Responsive design for all screen sizes
+4. Search and filter functionality
+5. Copy-to-clipboard features
+6. Documentation pages
+7. SEO optimization
+8. Performance optimization
+9. Deployment configuration
+10. README with setup instructions
+
+## Additional Notes
+- Prioritize user experience and performance
+- Ensure accessibility compliance
+- Make the code maintainable and well-documented
+- Include error handling and loading states
+- Test on multiple browsers and devices
+- Consider internationalization for future expansion
+
+The goal is to create a world-class documentation website that showcases iconest-react beautifully and helps developers discover and use the icons effectively.

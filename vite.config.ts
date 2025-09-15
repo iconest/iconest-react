@@ -6,7 +6,12 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'IconestReact',
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => {
+        if (format === 'es') return 'index.esm.js';
+        if (format === 'umd') return 'index.umd.js';
+        return 'index.js';
+      },
+      formats: ['es', 'umd', 'cjs'],
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
