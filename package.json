@@ -3,18 +3,18 @@
   "version": "0.1.5",
   "description": "A lightweight, flexible React icon library",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
-    "./icons/*": {
-      "types": "./dist/*.d.ts",
+    "./*": {
       "import": "./dist/*.js",
-      "require": "./dist/*.js"
+      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts"
     }
   },
   "sideEffects": false,
