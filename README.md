@@ -76,6 +76,23 @@ All icons accept the following props:
 
 Plus any standard SVG attributes (`onClick`, `onMouseOver`, etc.).
 
+### Tree-Shaking & Performance
+
+🎯 **Optimized Bundle Size**: Each icon is built as a separate module, ensuring perfect tree-shaking:
+
+- ✅ Import only what you use
+- ✅ Individual icons are ~0.5-2KB each  
+- ✅ No unused icons in your bundle
+- ✅ Works with all modern bundlers (Webpack, Vite, Rollup, etc.)
+
+```jsx
+// ✅ This only adds ~1KB to your bundle
+import { Heart } from 'iconest-react';
+
+// ❌ Avoid importing everything (though it works, it's not optimal)
+import * as Icons from 'iconest-react';
+```
+
 ### Examples
 
 ```jsx
