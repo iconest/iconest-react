@@ -1,6 +1,6 @@
 {
   "name": "iconest-react",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A lightweight, flexible React icon library",
   "main": "dist/index.js",
   "module": "dist/index.js",
