@@ -7,7 +7,7 @@ A comprehensive React icon library with 1,100+ beautiful, customizable SVG icons
 
 ## 📚 Documentation
 
-For complete documentation, icon search, and examples, visit: **[https://www.iconest.dev/](Iconest React Official website)**
+For complete documentation, icon search, and examples, visit: **[Iconest React Official website](https://www.iconest.dev/)**
 
 ## ✨ Features
 
